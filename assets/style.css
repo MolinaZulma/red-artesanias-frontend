@@ -15,12 +15,15 @@ body{
     color:var(--text);
     min-height:100vh;
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
+}
+h1, h2, h3, h4, h5, h6, .brand, .btn {
+    font-family: 'Montserrat', sans-serif;
 }
 header, footer{
     background: rgba(0,0,0,.2);
     backdrop-filter: blur(6px);
-    border-bottom:1px solid rgba(255,255,255,.06);;
+    border-bottom:1px solid rgba(255,255,255,.06);
 }
 nav{
     max-width: 1100px;
@@ -42,6 +45,7 @@ a{color:inherit;text-decoration:none}
 .nav-link{
     padding: 8px 10px;
     border-radius:8px;
+    transition: background 0.2s;
 }
 .nav-link:hover{
     background: rgba(255,255,255,.08);
@@ -54,6 +58,14 @@ a{color:inherit;text-decoration:none}
     padding: 10px 14px;
     font-weight: 600;
     cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
 }
 .btn.secondary{ 
     background:transparent; 
@@ -80,9 +92,13 @@ main{flex:1}
 
 background:var(--card); 
 border:1px solid rgba(255,255,255,.06);
-
 border-radius:14px; overflow:hidden;
-
+transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
 }
 
 .card .media{
@@ -109,7 +125,7 @@ border-radius:14px; overflow:hidden;
 .row{
     display:flex; 
     align-items:center; 
-    gap:10px; 
+    gap:10px;
     flex-wrap:wrap
 }
 
@@ -158,4 +174,30 @@ th, td{
     padding:20px; 
     border:1px dashed rgba(255,255,255,.18); 
     border-radius:12px; text-align:center
+}
+
+.repo-container {
+  text-align: center;
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.btn-front {
+  background-color: #f0db4f; /* Color representativo de JS */
+  color: #323330;
+}
+
+.btn-back {
+  background-color: #68217a; /* Color representativo de C# / .NET */
+  color: white;
 }

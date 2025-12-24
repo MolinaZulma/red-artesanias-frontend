@@ -3,7 +3,7 @@ const delay = (ms) => new  Promise(r=>setTimeout(r, ms));
 const productos = [
 
 {id:1, 
-    nombre:'Sombrero Vueltiao', 
+    nombre:'Sombrero Vueltiao',
     precio:120000, 
     descripcion:'Hecho a mano por artesanos.', 
     artesanoId:1, 

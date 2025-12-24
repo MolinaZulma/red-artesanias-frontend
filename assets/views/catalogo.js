@@ -5,9 +5,8 @@ import { addToCart } from '../state.js';
 export async function renderCatalogo(_,outlet=document.getElementById('app')) {
     outlet.innerHTML = html`
     <div class="container">
-        <div class="container">
-            <h2>Catálogo</h2>
-            <p class="muted">Cargando productos...</p>
+        <h2>Catálogo</h2>
+        <p class="muted">Cargando productos...</p>
     </div>
     `;
         const data = await API.listarProductos();
@@ -25,8 +24,8 @@ export async function renderCatalogo(_,outlet=document.getElementById('app')) {
                     <p class="price">${formatMoney(p.precio)}</p>
                     <p class="muted">${p.descripcion}</p>
                     <div class="row">
-                        <button class="btn" data-add="${p.id}">Agregar</button>
-                        <a class="btn secondary" href="/producto/${p.id}" data-link>Detalle</a>
+                        <button class="btn" data-add="${p.id}"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
+                        <a class="btn secondary" href="/producto/${p.id}" data-link><i class="fa-solid fa-eye"></i> Detalle</a>
                     </div> 
                 </div>
             </article>
@@ -34,7 +33,8 @@ export async function renderCatalogo(_,outlet=document.getElementById('app')) {
     </div>
 </div>
 `;
-        outlet.addEventListener('click', (e)=>{
+        // Usamos querySelector para atar el evento solo a este contenido, evitando duplicados al navegar
+        outlet.querySelector('.container').addEventListener('click', (e)=>{
             const btn = e.target.closest('button[data-add]');
             if(!btn)return;
                 const id = Number(btn.dataset.add);

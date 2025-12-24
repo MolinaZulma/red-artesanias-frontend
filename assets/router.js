@@ -3,7 +3,7 @@ import { renderCatalogo } from './views/catalogo.js';
 import { renderProductoDetalle } from './views/producto-detalle.js';
 import { renderArtesanos } from './views/artesanos.js';
 import { renderPedidos } from './views/pedidos.js';
-import { renderResenas } from './views/resenas.js'; 
+import { renderResenas } from './views/resenas.js';
 
 const routes = [
     { path: /^\/$/, action: renderHome },

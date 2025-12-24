@@ -8,14 +8,14 @@ export function mountNavbar(el) {
         const navHtml = html`
         <nav>
             <div class="nav-left">
-                <a class="brand" href="/"data-link>RedArtesanías.</a>
-                <a class="nav-link" href="/catalogo"data-link>Cátalogo</a>
-                <a class="nav-link" href="/artesanos"data-link>Artesanos</a>
-                <a class="nav-link" href="/resenas"data-link>Reseñas</a>
-                <a class="nav-link" href="/pedidos"data-link>Pedidos</a>
+                <a class="brand" href="/" data-link><i class="fa-solid fa-hands-holding-circle"></i> RedArtesanías.</a>
+                <a class="nav-link" href="/catalogo" data-link><i class="fa-solid fa-store"></i> Catálogo</a>
+                <a class="nav-link" href="/artesanos" data-link><i class="fa-solid fa-users"></i> Artesanos</a>
+                <a class="nav-link" href="/resenas" data-link><i class="fa-solid fa-star"></i> Reseñas</a>
+                <a class="nav-link" href="/pedidos" data-link><i class="fa-solid fa-box"></i> Pedidos</a>
             </div>
             <div class="nav-right">
-                Carrito: ${count}
+                <i class="fa-solid fa-cart-shopping"></i> ${count}
                 <a class="btn-secondary" href="/catalogo"data-link>Explorar</a>
             </div>
         </nav>
